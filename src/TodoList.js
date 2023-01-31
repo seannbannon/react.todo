@@ -3,8 +3,9 @@ import Todo from './Todo'
 
 export default function TodoList({ todos }) {
     return (
-        <div>
-            {todos.length}
-        </div>
+        todos.map(todo => {
+            return <Todo todo={todo} />
+
+        })
     )
 }
