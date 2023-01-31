@@ -46,13 +46,18 @@ function App() {
     todoNameRef.current.value = null
   }
 
+  function handleClearTodos(){
+    const newTodos = todos.filter(todo => !todo.complete)
+    setTodos(newTodos)
+  }
+
   return (
     // wrapped in empty element because you cant return more than one thing-- and here we aree returning 2 things
     <>
     <TodoList todos = {todos} toggleTodo = {toggleTodo} />
     <input ref={todoNameRef} type = "text" />
     <button onClick={handleAddTodo}>Add Todo</button>
-    <button>Clear Completed Todos</button>
+    <button onClick ={handleClearTodos}>Clear Completed Todos</button>
     <div>{todos.filter(todo => !todo.complete).length} left to do</div>
     </>
   )
