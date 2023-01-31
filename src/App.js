@@ -4,9 +4,25 @@ import TodoList from "./TodoList";
 //function that generates a random id
 import {v4} from 'uuid';
 
+const LOCAL_STORAGE_KEY = "todoApp.todos"
+
 function App() {
   const [todos, setTodos] = useState([])
   const todoNameRef = useRef()
+
+  //save todos to local storage to stay even after page refresh
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedTodos) setTodos(storedTodos)
+  }, [])
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+    }
+  }, [todos])
+
+
 
   function handleAddTodo(e){
     const name = todoNameRef.current.value 
