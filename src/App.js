@@ -12,6 +12,8 @@ function App() {
     if (name === "") return
     //test
     console.log(name)
+    //clears the box after you click the button
+    todoNameRef.current.value = null
   }
 
   return (
