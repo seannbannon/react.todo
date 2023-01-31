@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 //useRef to reference the html -- in this case the input
 import TodoList from "./TodoList";
+//function that generates a random id
+import {v4} from 'uuid';
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -10,8 +12,10 @@ function App() {
     const name = todoNameRef.current.value 
     //aka if nothing is in the box then dont add it to the todo list
     if (name === "") return
-    //test
-    console.log(name)
+    setTodos(prevTodos => {
+      return [...prevTodos, { id:v4(), name: name, complete:false}]
+    })
+    
     //clears the box after you click the button
     todoNameRef.current.value = null
   }
