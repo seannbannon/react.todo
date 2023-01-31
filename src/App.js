@@ -23,6 +23,11 @@ function App() {
   }, [todos])
 
 
+  function toggleTodo(id){
+    const newTodos = [...todos]
+  }
+
+
 
   function handleAddTodo(e){
     const name = todoNameRef.current.value 
