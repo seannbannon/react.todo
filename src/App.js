@@ -7,7 +7,11 @@ function App() {
   const todoNameRef = useRef()
 
   function handleAddTodo(e){
-
+    const name = todoNameRef.current.value 
+    //aka if nothing is in the box then dont add it to the todo list
+    if (name === "") return
+    //test
+    console.log(name)
   }
 
   return (
