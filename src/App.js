@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+//useRef to reference the html -- in this case the input
 import TodoList from "./TodoList";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     // wrapped in empty element because you cant return more than one thing-- and here we aree returning 2 things
     <>
     <TodoList todos = {todos} />
-    <input type = "text" />
+    <input ref={todoNameRef} type = "text" />
     <button onClick={handleAddTodo}>Add Todo</button>
     <button>Clear Completed Todos</button>
     <div>0 left to do</div>
