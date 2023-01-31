@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 //useRef to reference the html -- in this case the input
 import TodoList from "./TodoList";
 //function that generates a random id
