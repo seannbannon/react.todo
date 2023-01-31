@@ -24,7 +24,9 @@ function App() {
 
 
   function toggleTodo(id){
+    //this is a copy of our current todos list so we dont change our current todo list-- dont directly modify a state variable
     const newTodos = [...todos]
+    //basically find in the new list of todos a todo with a matching id that we pass through up top
     const todo = newTodos.find(todo => todo.id === id)
     todo.complete = !todo.complete
     setTodos(newTodos)
