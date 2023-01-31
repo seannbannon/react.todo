@@ -49,7 +49,7 @@ function App() {
   return (
     // wrapped in empty element because you cant return more than one thing-- and here we aree returning 2 things
     <>
-    <TodoList todos = {todos} />
+    <TodoList todos = {todos} toggleTodo = {toggleTodo} />
     <input ref={todoNameRef} type = "text" />
     <button onClick={handleAddTodo}>Add Todo</button>
     <button>Clear Completed Todos</button>
